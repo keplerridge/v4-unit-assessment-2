@@ -125,15 +125,15 @@ delete gameInfo.rating;
     looping over the shapes object and deleting any property whose value is odd number.
 */
 
-function evens (shapes) {
-    for(let key in shapes){
-        if(shapes[key] % 2 !== 0){
-            delete key;
-        }
+
+
+for(let key in shapes){
+    if(shapes[key] % 2 !== 0){
+        delete shapes[key];
     }
 }
 
-  
+
 ////////////////////PROBLEM 9////////////////////
 
 //DO NOT EDIT CODE BELOW
@@ -173,9 +173,16 @@ const classes = [
     all online classes with no homework.
 */
 
-// CODE HERE
 
-  
+for(let i = 0; i < classes.length; i++) {
+    for(let key in classes[i]){
+        if(classes[i][key] === true){
+            classes[i][key] = false;
+        };
+    };
+};
+
+
 ////////////////////PROBLEM 10////////////////////
 /*
     Use nested for loops to compare the letters in the lettersToPair array below.
@@ -189,7 +196,13 @@ const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n']
 let pairsArray = []
 //DO NOT EDIT CODE ABOVE
 
-//CODE HERE
+for(let i = 0; i < lettersToPair.length; i++){
+    for(let j = i + 1; j < lettersToPair.length; j++){
+        if (lettersToPair[i] === lettersToPair[j]){
+            pairsArray.push([i, j]);
+        };
+    };
+};
 
     
 
@@ -206,7 +219,12 @@ let pairsArray = []
     Those values should come from the functions parameters: name, age, breed, tricks (in order).
 */
 
-//CODE HERE
+function Dog (name, age, breed, tricks){
+    this.name = name;
+    this.age = age;
+    this.breed = breed;
+    this.tricks = tricks;
+}
 
 
 /*
@@ -215,7 +233,7 @@ let pairsArray = []
     Store the result in a variable called 'fido'.
 */
 
-//CODE HERE
+const fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake']);
   
 
 ////////////////////PROBLEM 12////////////////////
@@ -225,7 +243,10 @@ let pairsArray = []
     NAME will come from that context, so you should reference 'this.name' to get the correct name.
 */
 
-//CODE HERE
+
+function bark () {
+    return `${this.name} says bark!`;
+}
 
 
 /*
@@ -233,7 +254,7 @@ let pairsArray = []
     and saving the result to a variable called fidoSpeak.
 */
 
-//CODE HERE
+let fidoSpeak = bark.call(fido);
   
   
 ////////////////////PROBLEM 13////////////////////
@@ -244,7 +265,10 @@ let pairsArray = []
     Tricks will come from that context, so you should reference 'this.tricks' to access the correct array.
 */
 
-//CODE HERE
+function teachTrick (trick) {
+    this.tricks.push(trick);
+    return this.tricks;
+};
 
 
 /*
@@ -252,7 +276,7 @@ let pairsArray = []
     Save the result to a variable called 'teachStay'.
 */
 
-//CODE HERE
+let teachStay = teachTrick.bind(fido, 'stay');
   
   
 ////////////////////PROBLEM 14////////////////////
@@ -263,7 +287,9 @@ let pairsArray = []
     Remember to use the 'this' keyword to access values from the context that you will apply.
 */
 
-//CODE HERE
+function dogIntro (treat, toy) {
+    return `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}!`;
+}
 
 
 /*
@@ -272,7 +298,7 @@ let pairsArray = []
     and save the result to a variable called fidoIntro.
 */
 
-//CODE HERE
+let fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']);
   
 
 ////////////////////PROBLEM 15////////////////////
@@ -282,7 +308,13 @@ let pairsArray = []
     Those values should come from the function's parameters: brand, model, storage, color, sold (in order).
 */
 
-//CODE HERE
+function Phone (brand, model, storage, color, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.sold = sold;
+}
 
   
 /*
@@ -297,11 +329,11 @@ let pairsArray = []
 */
 
 //CODE HERE
-  // let phone1 = 
+  let phone1 = new Phone ('apple', 'iphone x', 256, 'black', false);
   
-  // let phone2 = 
+  let phone2 = new Phone ('samsung', 'galaxy s10', 128, 'red', false); 
   
-  // let phone3 = 
+  let phone3 = new Phone ('apple', 'iphone se', 512, 'black', false); 
   
 /*
     Last, add a prototype method to Phone.
@@ -311,6 +343,9 @@ let pairsArray = []
     Don't forget about the context of BRAND and MODEL.
 */
 
-//CODE HERE
+Phone.prototype.sell = function(){
+    this.sold = true;
+    return `${this.brand} ${this.model} has been sold.`;
+}
 
   
