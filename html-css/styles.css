@@ -12,3 +12,201 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+body {
+    margin: 0px;
+    font-family: nunito;
+}
+.topheader {
+    display: flex;
+    align-items: center;
+    height: 5%;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    position: fixed;
+    background-color: rgb(37, 37, 37);
+    z-index: 1;
+}
+
+.topheader h1 {
+    display: flex;
+    position: relative;
+    left: 2.5%;
+    width: 40%;
+    color: rgb(42, 171, 226);
+    font-size: 100%;
+}
+
+.topheader nav {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    width: 40%;
+    justify-content: space-between;
+    margin-right: 2.5%;
+}
+
+.topheader nav button {
+    display: flex;
+    margin: 0px 1.5% 0px 1.5%;
+    width: 20%;
+    justify-content: center;
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.topleftsection {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 80%;
+    padding: 5% 0px 0px 0px;
+    margin-left: 15%;
+    margin-right: 0px;
+    float: left;
+}
+
+.topleftsection article {
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.toprightsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    width: 40%;
+    height: 70%;
+    padding-top: 10%;
+    margin-left: 5%;
+}
+
+#topaside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 45%;
+    height: 60%;
+    box-shadow: 0px 0px 20px 5px rgba(102, 75, 75, .3);
+    border-radius: 10%;
+}
+
+#topaside h2 {
+    font-size: 120%;
+
+}
+
+#profileimg {
+    display: flex;
+    height: 60%;
+    width: 70%;
+    padding-top: 2.5%;
+}
+
+#bottomaside {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    box-shadow: 0px 0px 20px 5px rgba(102, 75, 75, .3);
+    width: 45%;
+    border-radius: 10%;
+}
+
+#bottomaside h1 {
+    font-size: 140%;
+}
+
+.toprightsection #bottomaside ol {
+    margin: 0px;
+}
+
+.toprightsection #bottomaside ol li {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 75%;
+    font-weight: bold;
+    font-family: nunito;
+}
+
+.bottomsection {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    margin: 5% 0% 5% 15%;
+    float: left;
+}
+
+.bottomsection header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bottomsection header h1 {
+    display: flex;
+    position: relative;
+    left: 5%;
+}
+
+.bottomsection header h2 {
+    display: flex;
+    position: absolute;
+    left: 47.5%;
+    font-size: 100%;
+    color: blue;
+    align-items: baseline;
+    margin-bottom: 0%;
+}
+
+#topimgs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 25%;
+}
+
+#topimgs img {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+}
+
+#bottomimgs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 25%;
+}
+
+#bottomimgs img {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+footer {
+    display: flex;
+    position: relative;
+    background-color: rgb(42, 171, 226);
+    color: rgb(37, 37, 37);
+    width: 100%;
+    height: 5%;
+}
+
+footer h1 {
+    margin-left: 2.5%;
+}
